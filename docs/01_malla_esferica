@@ -1,0 +1,18 @@
+# Caso de Estudio 1: Generación de Malla de Alto Orden para un Dominio Esférico
+
+## 1. Geometría y Mallado Base (ANSA)
+[cite_start]El proceso comienza con la definición de la geometría de una esfera y su dominio exterior circundante[cite: 113, 120]. [cite_start]ANSA detecta dos volúmenes: el interior de la esfera y el volumen fluido comprendido entre las paredes laterales y la pared exterior esférica[cite: 27]. [cite_start]Para el mallado se emplea Batch Mesh [cite: 127][cite_start], utilizando elementos triangulares (Trias) de primer orden para las superficies y tetraédricos (TetraRapid) para el volumen fluido exterior[cite: 28, 167].
+
+## 2. Conversión a Hexaedros
+[cite_start]Los tetraedros generan difusión numérica porque el flujo cruza sus caras en diagonal[cite: 79, 81]. [cite_start]Para evitar esto y mejorar la matemática del solver, se realiza una conversión mediante la herramienta Split to Hexas[cite: 172]. [cite_start]Los hexaedros permiten alinear los bloques con la dirección del flujo, logrando un cálculo más estable y un error de difusión prácticamente nulo[cite: 82, 84].
+
+## 3. Exportación (CGNS)
+[cite_start]La malla se exporta en formato CGNS[cite: 220]. Se configuran tres parámetros críticos:
+* [cite_start]**HDF5:** Seleccionado frente a ADF porque no tiene límite de tamaño y permite operaciones en paralelo en supercomputación[cite: 226, 227].
+* [cite_start]**Librería 3.2.0:** Se usa esta versión por su extrema estabilidad y compatibilidad estricta con códigos de investigación[cite: 230, 231].
+* [cite_start]**Scale (Target: meter):** Fundamental para escalar la geometría al Sistema Internacional y no alterar la física del problema[cite: 235, 236].
+
+## 4. Elevación de Orden y Traducción (PyHOPE)
+[cite_start]El archivo se procesa en el entorno Linux para obtener una malla de Orden 2, lo que aumenta el tiempo computacional un 47% respecto a la lineal[cite: 289]. 
+
+[cite_start]El paso crítico es la conversión matemática de los elementos: PyHOPE convierte los hexaedros de tipo Serendipity (HEXA20, con nodos solo en vértices y aristas) exportados por ANSA, en hexaedros de tipo Lagrange (HEXA27)[cite: 292, 293]. [cite_start]El código se encarga de inyectar los nodos faltantes en el centro de las caras y en el volumen interior para que las ecuaciones polinómicas funcionen correctamente[cite: 293].
