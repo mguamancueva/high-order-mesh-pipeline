@@ -14,7 +14,7 @@ module load libGLU/9.0.2-GCCcore-11.3.0
 
 # 2. Virtual environment setup and activation
 # (Assuming the venv is already created. If not, uncomment the next line)
-# python3.10 -m venv /venvs/pyhope310
+# python3.10 -m venv ~/venvs/pyhope310
 
 source /venvs/pyhope310/bin/activate
 echo "Virtual environment activated successfully."
