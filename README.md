@@ -23,7 +23,7 @@ The workflow connects commercial meshing software (**ANSA**) with open-source hi
 * **Volumetric Deformation:** Analyzing *Mesh Deformation* strategies to prevent inverted elements (negative Jacobians) near boundaries. Currently comparing the computational efficiency of the **Laplace model** versus the superior mesh quality and deep deformation penetration of the **Neo-Hookean model**.
 
 ## 🛠️ Code & Utilities
-* `scripts/`: Python utilities to automate topological order elevation via the Gmsh API and streamline the high-order pre-processing workflow.
+* `scripts/`: Python and Bash utilities to automate topological order elevation via the Gmsh API and initialize HPC environments (CESVIMA cluster) for high-order pre-processing.
 * `config_files/`: Templates for `parameter.ini` files for PyHOPE execution.
 
 ---
