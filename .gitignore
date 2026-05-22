@@ -1,0 +1,16 @@
+# Ignorar carpetas de resultados de simulación
+Results/
+results/
+
+# Ignorar mallas pesadas
+*.msh
+*.cgns
+*.h5
+
+# Ignorar archivos de CAD pesados (permitimos subir archivos pequeños de prueba si es necesario, pero por defecto los bloqueamos)
+*.step
+*.iges
+
+# Ignorar carpetas de entorno virtual de Python
+/venvs/
+__pycache__/
