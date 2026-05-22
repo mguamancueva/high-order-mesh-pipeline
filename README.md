@@ -1,6 +1,6 @@
 # High-Order Mesh Generation Pipeline for CFD 🚀
 
-This repository contains an automated, Python-based pipeline for the pre-processing and generation of high-order computational meshes. It is designed to map linear or low-order meshes onto exact analytical CAD geometries, elevating their topological order for use in high-order Computational Fluid Dynamics (CFD) solvers (such as HORSES3D/PyHOPE).
+This repository contains an automated, Python-based pipeline for the pre-processing and generation of high-order computational meshes. It is designed to map linear or low-order meshes onto exact analytical CAD geometries, elevating their topological order for use in high-order Computational Fluid Dynamics (CFD) solvers (such as HORSES3D).
 
 This work was developed as part of a Final Degree Project (TFG) in Aerospace Engineering at the Universidad Politécnica de Madrid (UPM), focusing on Aerospace Vehicles and advanced CFD meshing techniques.
 
