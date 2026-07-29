@@ -14,8 +14,8 @@ The project is modular, separating execution scripts from configuration template
 📁 high-order-mesh-pipeline/
 ├── 📁 scripts/                  
 │   ├── 🐍 mesh_elevation_curving.py       # Injects nodes and curves mesh projecting onto exact CAD (u,v).
-│   ├── 🐍 reassign_physical_groups.py     # Cleans topology and reassigns PIDs for pre-curved meshes.
-│   └── 🐚 run_pyhope_cesvima.sh           # Standard SLURM job script for PyHOPE in HPC environments.
+│   └── 🐍 reassign_physical_groups.py     # Cleans topology and reassigns PIDs for pre-curved meshes.
+│    
 │
 ├── 📁 cases_templates/
 │   ├── 📁 test_geometry/                  # Lightweight CAD (.step) and linear mesh (.msh) for testing.
